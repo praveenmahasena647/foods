@@ -42,5 +42,6 @@ func serveData(w http.ResponseWriter, r *http.Request) {
 
 	var data map[string]interface{} = map[string]interface{}{}
 	json.Unmarshal(databyte, &data)
+	w.WriteHeader(200)
 	json.NewEncoder(w).Encode(data)
 }
